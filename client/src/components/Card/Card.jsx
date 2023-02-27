@@ -3,7 +3,6 @@ import "./Card.scss";
 import { Link } from "react-router-dom";
 
 const Card = ({ item }) => {
-  console.log(item);
   return (
     <Link className="link" to={`/product/${item.id}`}>
       <div className="card">
@@ -11,7 +10,7 @@ const Card = ({ item }) => {
           {item?.attributes.isNew && <span>New Season</span>}
           <img
             src={
-              process.env.REACT_APP_UPLOAD_URL + item.attributes?.img?.data?.attributes?.url
+              process.env.REACT_APP_UPLOAD_URL + item.attributes.img?.data?.attributes?.url
             }
             alt=""
             className="mainImg"
